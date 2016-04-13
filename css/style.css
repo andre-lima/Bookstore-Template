@@ -1,0 +1,301 @@
+main, body, html, h1, h2, h3, img, div, article, p, input, select, label, form, figure {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+}
+#date {
+    position: absolute;
+    background-color: #222;
+    width: 180px;
+    height: 40px;
+    border-bottom-right-radius: 1em;
+    color: #ccc;
+    padding: 10px;
+    padding-left: 15px;
+}
+html {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #222;
+}
+.navbar {
+    margin-bottom: 0px;
+    border-radius: 0;
+}
+.jumbotron {
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+#logo {
+    max-width: 180px !important;
+    display: inline;
+}
+.active > a {
+    background-color: #222 !important;
+}
+#main-nav {
+    border-bottom: 1px solid #ddd !important;
+}
+blockquote {
+    border-right: 5px solid #333 !important;
+}
+blockquote footer {
+    padding: 5px 25px;
+}
+footer {
+    background-color: #f2f2f2;
+    margin-top: 0px;
+    padding: 25px;
+}
+.panel {
+    max-width: 200px;
+    height: 305px;
+}
+.panel-body {
+    height: 57%;
+    padding: 8px;
+}
+.panel-footer {
+    position: relative;
+    height: 43%;
+    display: flex;
+    align-items: center;
+}
+.img-affiche {
+    /*width: 110px;*/
+    /*height: 130px;*/
+    height: 100%;
+}
+.book-titre {
+    font-weight: 700;
+    font-size: 10pt;
+    margin: 0
+}
+.book-auteur {
+    font-size: 8pt;
+    color: #777;
+    margin: -2px 0 0 0;
+}
+.categ-item {
+    margin: 3px;
+    padding: 3px;
+    background-color: inherit;
+}
+.add-to-cart {
+    position: absolute;
+    /*margin-top: -15px;
+    text-align: right;*/
+    right: 10px;
+    bottom: 10px;
+}
+#items-container {
+    margin-right: 0px;
+    background-image: url(https://dl.dropboxusercontent.com/u/62133801/bookshelf-bkg.png);
+    background-repeat: repeat-y;
+    background-position: 100% top;
+}
+#display-main {
+    margin-top: 20px;
+}
+#affiche-panier {
+    -webkit-user-select: none;
+    /* Chrome all / Safari all */
+    -moz-user-select: none;
+    /* Firefox all */
+    -ms-user-select: none;
+    /* IE 10+ */
+    user-select: none;
+    /* Likely future */
+    position: relative;
+    right: 0px;
+    top: 20px;
+    padding: 0px;
+    border-top-left-radius: 2em;
+    border-bottom-left-radius: 2em;
+    background-color: #222;
+    min-height: 450px;
+    max-height: 650px;
+    /*Pour faire le slide du panier*/
+    overflow: auto;
+    width: 0%;
+    float: right;
+}
+#nav-panier {
+    width: 348px;
+    padding: 20px;
+}
+#nav-panier h1 {
+    padding: 10px;
+    border-bottom: 2px solid #333;
+}
+#qtt-panier {
+    border-radius: 50%;
+    width: 35px;
+    heigth: 30px;
+    background-color: red;
+    color: white;
+    text-align: center;
+    position: absolute;
+    top: -12px;
+    right: 0px;
+    padding: 8px;
+}
+.livre-dans-panier img {
+    width: 50px;
+}
+.livre-dans-panier .prix-dans-panier {
+    color: green;
+    font-size: 10pt;
+}
+.livre-dans-panier td {
+    font-size: 9pt;
+    color: #CCC;
+}
+.autheur-panier {
+    font-size: 8pt;
+    color: #999;
+}
+.livre-dans-panier td:nth-child(2) {
+    min-width: 170px;
+}
+.livre-dans-panier td:nth-child(3) {
+    text-align: center;
+    min-width: 70px;
+}
+.livre-dans-panier .supprime-du-panier a i {
+    background-color: red;
+    text-align: center;
+    border-radius: 50%;
+    padding: 4px 6px;
+    font-size: 14pt;
+    vertical-align: 5%;
+}
+.livre-dans-panier .supprime-du-panier a:link {
+    color: white;
+}
+.livre-dans-panier .supprime-du-panier a:visited {
+    color: white;
+}
+.livre-dans-panier {
+    overflow: auto;
+}
+#prix-total {
+    margin: 10px -5px;
+    padding: 0 3px;
+    width: 225px;
+    color: #bbb;
+    background-color: #222;
+    overflow: visible;
+}
+#prix-total p {
+    margin-left: 15px;
+}
+#prix-total p:nth-child(3) {
+    font-size: 16pt;
+    color: #eee;
+}
+#btn-payez {
+    margin-top: 20px;
+}
+.plus-minus, .livre-qtt {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 4px;
+}
+#affiche-description {
+    padding: 25px;
+    margin: 5px 25px 20px;
+}
+#affiche-description h2, #affiche-description h3 {
+    margin: 8px;
+}
+.titre-affiche {
+    margin: 20px;
+    padding: 15px;
+    border-radius: 3em;
+}
+#nom-categorie {
+    margin: 20px;
+    padding: 15px;
+    padding-left: 40px;
+    border-radius: 3em;
+}
+.nouveau-icon {
+    position: absolute;
+    z-index: 9;
+    top: 15px;
+    right: 70px;
+    text-shadow: 0px 0px 5px #000;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 23pt;
+    color: gold;
+}
+.img-details {
+    width: 200px;
+}
+.titre-details {
+    font-size: 21pt;
+}
+.auteur-details {
+    font-size: 17pt;
+    color: #777;
+}
+.description-details {
+    text-indent: 35px;
+}
+.titre-details {}
+.prix-details, .add-details {
+    font-size: 22pt;
+    text-align: center;
+    margin-top: 0px;
+}
+#prix-et-panier {
+    margin: 25px auto;
+    padding: 15px 0;
+    width: 80%;
+    border-top: 2px solid #555;
+    border-bottom: 2px solid #555;
+}
+#gros-panier {
+    position: relative;
+    z-index: 10;
+    width: 50%;
+    font-size: 255pt;
+    color: #222;
+    margin-top: 70px;
+}
+
+.livre-mini {
+    z-index: -10;
+    width: 76px;
+    position: absolute;
+    top: 0px;
+    left: 150px;
+}
+
+#prix-final {
+    text-align: center;
+    position: relative;
+    font-size: 24pt;
+    top: -270px;
+    color: #ccc;
+    z-index: 20;
+}
+
+#prix-final p:last-child {
+    font-size: 12pt;
+}
+
+.merci {
+    text-align: center;
+    margin-top: 150px;
+}
+
+#affiche-contact {
+    width: 90%;
+}

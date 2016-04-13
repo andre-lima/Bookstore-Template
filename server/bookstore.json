@@ -1,0 +1,100 @@
+[{
+    "id": 1,
+    "title": "How to Cheat in Unity 5: Tips and Tricks for Game Development",
+    "author": [
+        "Alan Thorn"
+    ],
+    "category": "Informatique",
+    "isbn": "978-1138802940",
+    "year": 2015,
+    "image": "https://images-na.ssl-images-amazon.com/images/I/51fB7Ofa2rL._SX383_BO1,204,203,200_.jpg",
+    "price": 57.54,
+    "new_release": true,
+    "description": "How to Cheat in Unity 5 takes a no-nonsense approach to help you achieve fast and effective results with Unity 5. Geared towards the intermediate user, HTC in Unity 5 provides content beyond what an introductory book offers, and allows you to work more quickly and powerfully in Unity. Packed full with easy-to-follow methods to get the most from Unity, this book explores time-saving features for interface customization and scene management, along with productivity-enhancing ways to work with rendering and optimization.",
+    "in_cart": 0
+}, {
+    "id": 2,
+    "title": "1984",
+    "author": [
+        "George Orwell"
+    ],
+    "category": "Fiction",
+    "isbn": "978-0141036144",
+    "year": 1949,
+    "image": "https://images-na.ssl-images-amazon.com/images/I/31twj9hz1kL._SX278_BO1,204,203,200_.jpg",
+    "price": 10.99,
+    "new_release": false,
+    "description": "George Orwell's dystopian masterpiece, Nineteen Eighty-Four is perhaps the most pervasively influential book of the twentieth century, making famous Big Brother, newspeak and Room 101. 'Who controls the past controls the future: who controls the present controls the past'",
+    "in_cart": 0
+}, {
+    "id": 3,
+    "title": "The Bread Baker's Apprentice: Mastering the Art of Extraordinary Bread",
+    "author": [
+        "Peter Reinhart",
+        "Ron Manville"
+    ],
+    "category": "Cuisine",
+    "isbn": "978-1580082686",
+    "year": 2001,
+    "image": "https://images-na.ssl-images-amazon.com/images/I/517BQgzhYzL._SX455_BO1,204,203,200_.jpg",
+    "price": 31.93,
+    "new_release": false,
+    "description": "In The Bread Baker’s Apprentice, Peter shares his latest bread breakthroughs, arising from his study in several of France’s famed boulangeries and the always-enlightening time spent in the culinary academy kitchen with his students. Peer over Peter’s shoulder as he learns from Paris’s most esteemed bakers, like Lionel Poilâne and Phillippe Gosselin, whose pain à l’ancienne has revolutionized the art of baguette making. Then stand alongside his students in the kitchen as Peter teaches the classic twelve stages of building bread, his clear instructions accompanied by over 100 step-by-step photographs.",
+    "in_cart": 0
+}, {
+    "id": 4,
+    "title": "Warren Buffett: 24 leçons pour gagner en bourse",
+    "author": [
+        "James Pardoe"
+    ],
+    "category": "Finances",
+    "isbn": "B01CZTEHS4",
+    "year": 2016,
+    "image": "https://images-na.ssl-images-amazon.com/images/I/41kIQpLb00L._SX294_BO1,204,203,200_.jpg",
+    "price": 31.46,
+    "new_release": true,
+    "description": "Depuis près de 50 ans, Warren Buffett applique les principes d'investissement que vous allez découvrir dans ce livre. Non seulement ces principes vont à l'inverse de ce que font la plupart des investisseurs sur les marchés boursiers, mais en plus ils sont d'une désarmante simplicité! En les appliquant avec rigueur et constance, Warren Buffett est sans conteste, et de tous les temps, devenu l'investisseur qui a su tirer les meilleurs rendements de son portefeuille d'actions.",
+    "in_cart": 0
+}, {
+    "id": 5,
+    "title": "La journée des petits",
+    "author": [
+        "Emilie Beaumont"
+    ],
+    "category": "Enfants",
+    "isbn": "978-2215061847",
+    "year": 1998,
+    "image": "https://images-na.ssl-images-amazon.com/images/I/61%2BoQUuekcL._SX381_BO1,204,203,200_.jpg",
+    "price": 12.56,
+    "new_release": false,
+    "description": "The best way for little ones to learn everything about time, days and hours, and to practise those fascinating words! Discover Fleurus charming picture books with simple images and texts to develop children's knowledge of the world around them.",
+    "in_cart": 0
+}, {
+    "id": 6,
+    "title": "The Legend of Zelda: Hyrule Historia",
+    "author": [
+        "Eiji Aonuma", "Akira Himekawa"
+    ],
+    "category": "Manga",
+    "isbn": "978-1616550417",
+    "year": 2013,
+    "image": "https://images-na.ssl-images-amazon.com/images/I/51O2J58KBOL._SX375_BO1,204,203,200_.jpg",
+    "price": 28.94,
+    "new_release": false,
+    "description": "Dark Horse Books and Nintendo team up to bring you The Legend of Zelda: Hyrule Historia, containing an unparalleled collection of historical information on The Legend of Zelda franchise. This handsome hardcover contains never-before-seen concept art, the full history of Hyrule, the official chronology of the games, and much more! Starting with an insightful introduction by the legendary producer and video-game designer of Donkey Kong, Mario, and The Legend of Zelda, Shigeru Miyamoto, this book is crammed full of information about the storied history of Link's adventures from the creators themselves! As a bonus, The Legend of Zelda: Hyrule Historia includes an exclusive comic by the foremost creator of The Legend of Zelda manga — Akira Himekawa!",
+    "in_cart": 0
+}, {
+    "id": 7,
+    "title": "The 7 Habits of Highly Effective People: Powerful Lessons in Personal Change",
+    "author": [
+        "Stephen R. Covey"
+    ],
+    "category": "Self-Help",
+    "isbn": "978-1451639612",
+    "year": 2013,
+    "image": "https://images-na.ssl-images-amazon.com/images/I/51%2BMNH9ThxL._SX328_BO1,204,203,200_.jpg",
+    "price": 11.40,
+    "new_release": false,
+    "description": "One of the most inspiring and impactful books ever written, The 7 Habits of Highly Effective People has captivated readers for 25 years. It has transformed the lives of Presidents and CEOs, educators and parents— in short, millions of people of all ages and occupations.",
+    "in_cart": 0
+}]
