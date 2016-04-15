@@ -23,7 +23,7 @@ $(function() {
     $tableDuPanier.html('');
 
     //Si panier est sauvegardé dans localStorage, rempli-le
-    if (window.localStorage && localStorage.getItem("dans_panier") != null)
+    if (localStorage.getItem("dans_panier") != null)
         tempLivres = JSON.parse(localStorage.getItem("dans_panier"));
 
     //Faire le casting de Object -> Livre
@@ -229,9 +229,9 @@ $(function() {
                     $('#display-main').html(data);
                     $('.active').removeClass("active");
                     $panier = $('#gros-panier');
-                    for(var item of panier)
+                    for(var i of panier)
                     {
-                        var $new = $('<img style="z-index:' + randomNb(-10, -1) + ' ;transform: translate(' + randomNb(-55, 55) + 'px, ' + randomNb(-10, 10) + 'px) rotate(' + randomNb(-36, 36) + 'deg);" class="livre-mini" src="' + item.image +'" alt="cover" />');
+                        var $new = $('<img style="z-index:' + randomNb(-10, -1) + ' ;transform: translate(' + randomNb(-55, 55) + 'px, ' + randomNb(-10, 10) + 'px) rotate(' + randomNb(-36, 36) + 'deg);" class="livre-mini" src="' + i.image +'" alt="cover" />');
                         $panier.append($new);
                         $('#prix-ici').text(prixTotal.toFixed(2));
                     }
@@ -524,25 +524,11 @@ $(function() {
 
     //Sauvegarde les livres dans le panier
     function sauvegarderPanier(panier) {
-		if(window.localStorage)
-			localStorage.setItem("dans_panier", JSON.stringify(panier));
+        localStorage.setItem("dans_panier", JSON.stringify(panier));
     }
-	
-	//Print
-	var $printPanier = $("#affiche-panier");
-	//Teste si on est on mode d'impression
-	var mediaQueryList = window.matchMedia('print');
-	mediaQueryList.addListener(function(mql) {
-		if (mql.matches) { //Avant l'impression
-			$printPanier.width("800px");
-			console.log($printPanier.width());
 
-		} else { //Apres l'impression
-			fermerPanier();
-		}
-	});
-	
 }); //Fin du $()
+
 
 //Classe Livre
 function Livre() {
@@ -704,5 +690,3 @@ var randomQuote = Math.floor(Math.random() * 5);
 
 afficheQuote.innerHTML = '"' + quotes[randomQuote].quote + '"';
 afficheAuteur.innerHTML = '"' + quotes[randomQuote].auteur + '"';
-
-

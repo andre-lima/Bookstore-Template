@@ -198,9 +198,6 @@ footer {
 #btn-payez {
     margin-top: 20px;
 }
-.plus-minus {
-	cursor: pointer;
-}
 .plus-minus, .livre-qtt {
     display: inline-block;
     width: 10px;
@@ -251,7 +248,7 @@ footer {
 .description-details {
     text-indent: 35px;
 }
-
+.titre-details {}
 .prix-details, .add-details {
     font-size: 22pt;
     text-align: center;
@@ -301,25 +298,4 @@ footer {
 
 #affiche-contact {
     width: 90%;
-}
-
-@media print {
-	#affiche-panier {
-		background-color: white;
-		position: absolute;
-		left: 170px;
-		overflow: visible;
-	}
-
-	#display-main, footer, #nav, #header-page{ display: none;}
-	
-	.plus-minus, .supprime-du-panier, #btn-payez{
-		display: none;
-	}
-	
-	.livre-qtt {
-		font-size: 14pt;
-	}
-	
-	.livre-dans-panier td img { width: 170px; }
 }
