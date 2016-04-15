@@ -23,8 +23,7 @@ html {
     margin-bottom: 0px;
     border-radius: 0;
 }
-.jumbotron {
-    margin-bottom: 0;
+    .jumbotron {    margin-bottom: 0;
     padding-bottom: 0;
 }
 #logo {
@@ -312,14 +311,14 @@ footer {
 	}
 
 	#display-main, footer, #nav, #header-page{ display: none;}
-	
+
 	.plus-minus, .supprime-du-panier, #btn-payez{
 		display: none;
 	}
-	
+
 	.livre-qtt {
 		font-size: 14pt;
 	}
-	
+
 	.livre-dans-panier td img { width: 170px; }
 }
