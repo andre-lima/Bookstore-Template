@@ -150,7 +150,7 @@ $(function() {
 
                 //S'il n'y a pas de livres, affiche une message
                 if ($('#display-books').children()[0] == undefined)
-                    $('#display-books').html("<p style='padding: 10px' class='alert alert-danger'>Pas de livres disponibles pour ce categorie. Nous sommes désolés!</p>");
+                    $('#display-books').html("<p style='padding: 10px' class='alert alert-danger'>Pas de livres disponibles pour cette categorie. Nous sommes désolés!</p>");
             }
         });
     }
