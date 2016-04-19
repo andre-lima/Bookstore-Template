@@ -15,6 +15,10 @@ estPanierVide = true;
 
 
 $(function() {
+
+    path = location.origin;
+    console.log(path);
+
     //Charge les quotes
     $.ajax({
         url: 'server/quotes.json',
@@ -253,7 +257,7 @@ $(function() {
                     $('.active').removeClass("active");
                     $panier = $('#gros-panier');
                     for (var item of panier) {
-                        var $new = $('<img style="z-index:' + randomNb(-10, -1) + ' ;transform: translate(' + randomNb(-55, 55) + 'px, ' + randomNb(-10, 10) + 'px) rotate(' + randomNb(-36, 36) + 'deg);" class="livre-mini" src="' + item.image + '" alt="cover" />');
+                        var $new = $('<img style="z-index:' + randomNb(-10, -1) + ' ;transform: translate(' + randomNb(-55, 55) + 'px, ' + randomNb(-10, 10) + 'px) rotate(' + randomNb(-36, 36) + 'deg);" class="livre-mini" src="' + path + item.image + '" alt="cover" />');
                         $panier.append($new);
                         $('#prix-ici').text(prixTotal.toFixed(2));
                     }
@@ -279,7 +283,7 @@ $(function() {
         $panier = $('#gros-panier');
         $panier.html('');
         for (var i of panier) {
-            var $new = $('<img style="z-index:' + randomNb(-10, -1) + ' ;transform: translate(' + randomNb(-55, 55) + 'px, ' + randomNb(-10, 10) + 'px) rotate(' + randomNb(-36, 36) + 'deg);" class="livre-mini" src="' + i.image + '" alt="cover" />');
+            var $new = $('<img style="z-index:' + randomNb(-10, -1) + ' ;transform: translate(' + randomNb(-55, 55) + 'px, ' + randomNb(-10, 10) + 'px) rotate(' + randomNb(-36, 36) + 'deg);" class="livre-mini" src="' + path + i.image + '" alt="cover" />');
             $panier.append($new);
             $('#prix-ici').text(prixTotal.toFixed(2));
         }
@@ -687,17 +691,17 @@ Livre.prototype.setQtt = function(qtt) {
 }
 
 Livre.prototype.domFormatAffiche = function() {
-    var livreHTML = '<div id="L' + this.id + '" class="livre-dans-affiche col-sm-4"><div class="panel panel-primary"><a id="D' + this.id + '" href="#"><div class="panel-body"><i title="Nouveauté!" class="nouveau-icon fa fa-star"></i><img src="' + this.image + '" class="center-block img-affiche" alt="book" /></div></a><div class="panel-footer"><div><a id="T' + this.id + '" href="#"><p class="book-titre">' + this.titre + '</p></a><p class="book-auteur">' + this.auteur + '</p><p class="book-prix">$' + this.prix.toFixed(2) + '</p><div class="add-to-cart"><a value="' + this.id + '" class="ajouter" href="#"><i class="fa fa-share"></i><i class="fa fa-shopping-cart"></i></a></div></div></div></div></div>';
+    var livreHTML = '<div id="L' + this.id + '" class="livre-dans-affiche col-sm-4"><div class="panel panel-primary"><a id="D' + this.id + '" href="#"><div class="panel-body"><i title="Nouveauté!" class="nouveau-icon fa fa-star"></i><img src="' + path + this.image + '" class="center-block img-affiche" alt="book" /></div></a><div class="panel-footer"><div><a id="T' + this.id + '" href="#"><p class="book-titre">' + this.titre + '</p></a><p class="book-auteur">' + this.auteur + '</p><p class="book-prix">$' + this.prix.toFixed(2) + '</p><div class="add-to-cart"><a value="' + this.id + '" class="ajouter" href="#"><i class="fa fa-share"></i><i class="fa fa-shopping-cart"></i></a></div></div></div></div></div>';
     return livreHTML;
 }
 
 Livre.prototype.domFormatPanier = function() {
-    var livreHTML = '<tr id="P' + this.id + '" class="livre-dans-panier"><td><img src="' + this.image + '" class="center-block img" alt="book"></td><td><p>' + this.titre + '</p><p class="autheur-panier">' + this.auteur + '</p><p class="prix-dans-panier">$' + this.prix.toFixed(2) + '</p></td><td><div class="supprime-du-panier"><a value="' + this.id + '" class="supprimer" href="#"><i class="fa fa-remove"></i></a></div><div style="margin-top: 8px;"><div>qtt</div><div value="' + this.id + '"><span class="plus-minus minus fa fa-minus-square"></span><span class="livre-qtt">' + this.qttDansPanier + '</span><span class="plus-minus plus fa fa-plus-square"></span></div></div></td></tr>';
+    var livreHTML = '<tr id="P' + this.id + '" class="livre-dans-panier"><td><img src="' + path + this.image + '" class="center-block img" alt="book"></td><td><p>' + this.titre + '</p><p class="autheur-panier">' + this.auteur + '</p><p class="prix-dans-panier">$' + this.prix.toFixed(2) + '</p></td><td><div class="supprime-du-panier"><a value="' + this.id + '" class="supprimer" href="#"><i class="fa fa-remove"></i></a></div><div style="margin-top: 8px;"><div>qtt</div><div value="' + this.id + '"><span class="plus-minus minus fa fa-minus-square"></span><span class="livre-qtt">' + this.qttDansPanier + '</span><span class="plus-minus plus fa fa-plus-square"></span></div></div></td></tr>';
     return livreHTML;
 }
 
 Livre.prototype.domFormatDetails = function() {
-        var livreHTML = '<div class="col-sm-4"><img src="' + this.image + '" class="center-block img-details" alt="book" /></a></div>        <div class="col-sm-8">        <p class="titre-details">' + this.titre + '</p>        <p class="auteur-details">' + this.auteur + '</p>        <p class="description-details">' + this.description + '</p>            <div id="prix-et-panier" class="row">                    <div class="col-sm-6">                            <p class="prix-details">$' + this.prix.toFixed(2) + '</p>                    </div>                    <div class="col-sm-6">                            <div class="add-details">                                    <a value="' + this.id + '" class="ajouter" href="#"><i class="fa fa-share"></i><i class="fa fa-shopping-cart"></i></a>                            </div>                    </div>            </div></div>    ';
+        var livreHTML = '<div class="col-sm-4"><img src="' + path + this.image + '" class="center-block img-details" alt="book" /></a></div>        <div class="col-sm-8">        <p class="titre-details">' + this.titre + '</p>        <p class="auteur-details">' + this.auteur + '</p>        <p class="description-details">' + this.description + '</p>            <div id="prix-et-panier" class="row">                    <div class="col-sm-6">                            <p class="prix-details">$' + this.prix.toFixed(2) + '</p>                    </div>                    <div class="col-sm-6">                            <div class="add-details">                                    <a value="' + this.id + '" class="ajouter" href="#"><i class="fa fa-share"></i><i class="fa fa-shopping-cart"></i></a>                            </div>                    </div>            </div></div>    ';
         return livreHTML;
 }
 //Fin de la classe Livre
