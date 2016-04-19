@@ -16,7 +16,7 @@ estPanierVide = true;
 
 $(function() {
 
-    path = location.origin;
+    path = window.location.href;
     console.log(path);
 
     //Charge les quotes
