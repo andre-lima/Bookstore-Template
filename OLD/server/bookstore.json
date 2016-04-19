@@ -97,4 +97,90 @@
     "new_release": false,
     "description": "One of the most inspiring and impactful books ever written, The 7 Habits of Highly Effective People has captivated readers for 25 years. It has transformed the lives of Presidents and CEOs, educators and parents— in short, millions of people of all ages and occupations.",
     "in_cart": 0
+}, {
+    "id": 8,
+    "title": "JavaScript and JQuery: Interactive Front-End Web Development",
+    "author": [
+        "Jon Duckett"
+    ],
+    "category": "Informatique",
+    "isbn": "978-1118531648",
+    "year": 2014,
+    "image": "https://images-na.ssl-images-amazon.com/images/I/41oa41LdNdL._SX400_BO1,204,203,200_.jpg",
+    "price": 35.63,
+    "new_release": false,
+    "description": "This full-color book adopts a visual approach to teaching JavaScript & jQuery, showing you how to make web pages more interactive and interfaces more intuitive through the use of inspiring code examples, infographics, and photography. The content assumes no previous programming experience, other than knowing how to create a basic web page in HTML & CSS. You'll learn how to achieve techniques seen on many popular websites (such as adding animation, tabbed panels, content sliders, form validation, interactive galleries, and sorting data).",
+    "in_cart": 0
+}, {
+    "id": 9,
+    "title": "Foundation",
+    "author": [
+        "Isaac Asimov"
+    ],
+    "category": "Fiction",
+    "isbn": "978-0553293357",
+    "year": 1991,
+    "image": "https://images-na.ssl-images-amazon.com/images/I/51aKk%2BWF2XL._SX298_BO1,204,203,200_.jpg",
+    "price": 10.56,
+    "new_release": false,
+    "description": "For twelve thousand years the Galactic Empire has ruled supreme. Now it is dying. But only Hari Sheldon, creator of the revolutionary science of psychohistory, can see into the future--to a dark age of ignorance, barbarism, and warfare that will last thirty thousand years. To preserve knowledge and save mankind, Seldon gathers the best minds in the Empire--both scientists and scholars--and brings them to a bleak planet at the edge of the Galaxy to serve as a beacon of hope for a fututre generations. He calls his sanctuary the Foundation.",
+    "in_cart": 0
+}, {
+    "id": 10,
+    "title": "NOFX: The Hepatitis Bathtub and Other Stories",
+    "author": [
+        "NOFX", 
+		"Jeff Alulis"
+    ],
+    "category": "Musique",
+    "isbn": "978-0306824777",
+    "year": 2016,
+    "image": "https://images-na.ssl-images-amazon.com/images/I/61bEY7MD2qL._SX331_BO1,204,203,200_.jpg",
+    "price": 10.56,
+    "new_release": true,
+    "description": "NOFX: The Hepatitis Bathtub and Other Stories is the first tell-all autobiography from one of the world’s most influential and controversial punk bands. Fans and non-fans alike will be shocked by the stories of murder, suicide, addiction, counterfeiting, riots, bondage, terminal illness, the Yakuza, and drinking pee. Told from the perspective of each of the band's members, this book looks back at more than thirty years of comedy, tragedy, and completely inexplicable success.",
+    "in_cart": 0
+}, {
+    "id": 11,
+    "title": "Deliciously Ella Every Day: Quick and Easy Recipes for Gluten-Free Snacks, Packed Lunches, and Simple Meals",
+    "author": [
+        "Ella Woodward"
+    ],
+    "category": "Cuisine",
+    "isbn": "978-1501127618",
+    "year": 2016,
+    "image": "https://images-na.ssl-images-amazon.com/images/I/51Los7qfw5L._SX368_BO1,204,203,200_.jpg",
+    "price": 22.82,
+    "new_release": true,
+    "description": "It’s easy to be healthy until you get hungry. Making healthy eating sustainable is about two things. One: it’s got to be doable in the context of a time starved life. Two: it’s got to be delicious. Ella Woodward’s newest cookbook Deliciously Ella Every Day offers fantastically appealing and quick recipes for breakfasts, packed lunches, snacks on the go, and stress-free meals.",
+    "in_cart": 0
+}, {
+    "id": 12,
+    "title": "Windows 3.1: Self-Teaching Guide",
+    "author": [
+        "Keith Weiskamp",
+		"Saul Aguiar"
+    ],
+    "category": "Informatique",
+    "isbn": "978-0471558705",
+    "year": 1992,
+    "image": "https://images-na.ssl-images-amazon.com/images/I/51o8uifgp0L._SX402_BO1,204,203,200_.jpg",
+    "price": 17.47,
+    "new_release": false,
+    "description": "Provides user-friendly, step-by-step guidance to show what Windows 3.1 can do and how to use it effectively. Features include improved File Manager designed to allow users to view multiple directories and perform such tasks as copying, moving and deleting files quickly and efficiently; StartUp Group which automatically runs applications when Windows start up; True Type Fonts--a new scaling technology; more consistent and efficient Dialog Boxes; Screen Saver and much more.",
+    "in_cart": 0
+}, {
+    "id": 13,
+    "title": "National Geographic Little Kids First Big Book of Why",
+    "author": [
+        "Amy Shields"
+    ],
+    "category": "Enfants",
+    "isbn": "978-1426307935",
+    "year": 2011,
+    "image": "https://images-na.ssl-images-amazon.com/images/I/61cX7fhl06L._SX495_BO1,204,203,200_.jpg",
+    "price": 9.99,
+    "new_release": false,
+    "description": "Linking to a popular feature in the super successful National Geographic Little Kids magazine, this book brings the browsable fun of the bestselling National Geographic Kids Almanac, to a new audience: preschoolers! Using an interactive question-and-answer format and content grounded in a child's immediate world, the Big Book of Why delivers lively information, hands-on games, simple recipes, crafts, and more. What makes a car go? How does mushy dough become a crispy cookie? What does the doctor see in my throat? An essential parent reference, The Big Book of Why invites children to ask big questions, think big thoughts, and get answers that are accurate, engaging, level-appropriate, and based on sound educational findings. It helps prepare preschoolers for school in an interactive way—the very best way to foster learning at this age, according to research. Highly photographic and playful, this big book is an adventure in exploration.",
+    "in_cart": 0
 }]

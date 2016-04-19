@@ -10,6 +10,26 @@ estPanierVide = true;
 
 $(function() {
 
+    //Charge les quotes
+    $.ajax({
+        url: 'server/quotes.json',
+        type: 'GET',
+        dataType: 'JSON',
+        error: function() {
+            alert('Erreur chargement');
+        },
+        success: function(data) {
+            var quotes = data;
+            console.log("loading quotes...");
+            var $afficheQuote = $("#quote");
+            var $afficheAuteur = $("#auteur");
+            var randomQuote = Math.floor(Math.random() * quotes.length);
+
+            $afficheQuote.html('"' + quotes[randomQuote].quote + '"');
+            $afficheAuteur.html('"' + quotes[randomQuote].auteur + '"');
+        }
+    });
+
     //Si on click sur le logo, on va a la page d'accueil
     $('#logo').on('click', function(e) {
         e.preventDefault();
@@ -23,7 +43,7 @@ $(function() {
     $tableDuPanier.html('');
 
     //Si panier est sauvegardé dans localStorage, rempli-le
-    if (localStorage.getItem("dans_panier") != null)
+    if (window.localStorage && localStorage.getItem("dans_panier") != null)
         tempLivres = JSON.parse(localStorage.getItem("dans_panier"));
 
     //Faire le casting de Object -> Livre
@@ -32,10 +52,11 @@ $(function() {
         t.Livre(i);
         panier.push(t); //Push dans le tableau 'panier'
     }
-    remplirPanier();  //Avec les livres du localStorage
+    remplirPanier(); //Avec les livres du localStorage
 
     //Affiche la date et heure
     setInterval(setDate, 1000);
+
     function setDate() {
         var dt = new Date();
         var time = dt.getDate() + "/" + dt.getMonth() + "/" + dt.getFullYear() + "&nbsp&nbsp&nbsp&nbsp" + reglerZero(dt.getHours()) + ":" + reglerZero(dt.getMinutes()) + ":" + reglerZero(dt.getSeconds());
@@ -128,8 +149,8 @@ $(function() {
                 $('#nom-categorie').text(categ + "!");
 
                 //S'il n'y a pas de livres, affiche une message
-                if($('#display-books').children()[0] == undefined)
-                    $('#display-books').html("<p style='padding: 10px' class='alert alert-danger'>Pas de livres disponibles pour ce categorie. Nous sommes désolés!</p>");
+                if ($('#display-books').children()[0] == undefined)
+                    $('#display-books').html("<p style='padding: 10px' class='alert alert-danger'>Pas de livres disponibles pour cette categorie. Nous sommes désolés!</p>");
             }
         });
     }
@@ -138,13 +159,12 @@ $(function() {
     function filtrerLivresParCategorie(categ) {
         var tempLivres = [];
 
-        for(var i = 0; i < books.length; i++)
-        {
-            if(categ == "Tout")
+        for (var i = 0; i < books.length; i++) {
+            if (categ == "Tout")
                 tempLivres.push(books[i]); //Affiche tout
-            else if(books[i].category == categ)
+            else if (books[i].category == categ)
                 tempLivres.push(books[i]); //Affiche si dans la categories désiré
-            else if(categ == "Autres" && categories.indexOf(books[i].category) < 0)
+            else if (categ == "Autres" && categories.indexOf(books[i].category) < 0)
                 tempLivres.push(books[i]); //Si la categorie n'est pas dans la liste, affiche si l'usage a choisi la categ 'Autres'
         }
         return tempLivres;
@@ -152,7 +172,7 @@ $(function() {
 
     //Charge le layout et livres pour l'option 'Accueil' et 'Nouveauté'
     function loadContenuPrincipal(contenu) {
-        if(contenu != "categories") {
+        if (contenu != "categories") {
             $.ajax({
                 url: 'pages/' + contenu + '.html#affiche-' + contenu,
                 type: 'GET',
@@ -183,13 +203,11 @@ $(function() {
         }
 
         //Affiche un maximum de 'qtt' nouveautés per page
-        function retourneLivresFiltresParNouveaute(qtt)
-        {
-            for(var i = 0; i < books.length; i++)
-            {
-                if(books[i].new_release == true)
+        function retourneLivresFiltresParNouveaute(qtt) {
+            for (var i = 0; i < books.length; i++) {
+                if (books[i].new_release == true)
                     tempLivres.push(books[i]);
-                if(tempLivres.length == qtt) //Si déjà atteint la qtt max, sortez du boucle
+                if (tempLivres.length == qtt) //Si déjà atteint la qtt max, sortez du boucle
                     break;
             }
         }
@@ -216,7 +234,7 @@ $(function() {
 
     //Regler le bouton "Payez"
     $('#btn-payez').on("click", function() {
-        if($('#btn-payez').hasClass("disabled") == false){
+        if ($('#btn-payez').hasClass("disabled") == false) {
             $.ajax({
                 url: 'pages/paiement.html#affiche-payez',
                 type: 'GET',
@@ -229,20 +247,19 @@ $(function() {
                     $('#display-main').html(data);
                     $('.active').removeClass("active");
                     $panier = $('#gros-panier');
-                    for(var i of panier)
-                    {
-                        var $new = $('<img style="z-index:' + randomNb(-10, -1) + ' ;transform: translate(' + randomNb(-55, 55) + 'px, ' + randomNb(-10, 10) + 'px) rotate(' + randomNb(-36, 36) + 'deg);" class="livre-mini" src="' + i.image +'" alt="cover" />');
+                    for (var item of panier) {
+                        var $new = $('<img style="z-index:' + randomNb(-10, -1) + ' ;transform: translate(' + randomNb(-55, 55) + 'px, ' + randomNb(-10, 10) + 'px) rotate(' + randomNb(-36, 36) + 'deg);" class="livre-mini" src="' + item.image + '" alt="cover" />');
                         $panier.append($new);
                         $('#prix-ici').text(prixTotal.toFixed(2));
                     }
+
                     function randomNb(min, max) {
                         return Math.floor(Math.random() * (max - min + 1)) + min;
                     }
 
                     //Écouteurs pour regler le click sur des modes de paiement
-                    $('.bt-paiement').on('click', function(){
-                        if(confirm("Vous voulez payer le montant de " + prixTotal.toFixed(2) + " avec " + this.title + "?"))
-                        {
+                    $('.bt-paiement').on('click', function() {
+                        if (confirm("Vous voulez payer le montant de " + prixTotal.toFixed(2) + " avec " + this.title + "?")) {
                             $('#display-main').html("<h1 class='merci alert alert-success'>Merci pour votre achat!</h1>");
                             viderPanier();
                         }
@@ -256,20 +273,19 @@ $(function() {
     function mettreAJourPanierAchats() {
         $panier = $('#gros-panier');
         $panier.html('');
-        for(var i of panier)
-        {
-            var $new = $('<img style="z-index:' + randomNb(-10, -1) + ' ;transform: translate(' + randomNb(-55, 55) + 'px, ' + randomNb(-10, 10) + 'px) rotate(' + randomNb(-36, 36) + 'deg);" class="livre-mini" src="' + i.image +'" alt="cover" />');
+        for (var i of panier) {
+            var $new = $('<img style="z-index:' + randomNb(-10, -1) + ' ;transform: translate(' + randomNb(-55, 55) + 'px, ' + randomNb(-10, 10) + 'px) rotate(' + randomNb(-36, 36) + 'deg);" class="livre-mini" src="' + i.image + '" alt="cover" />');
             $panier.append($new);
             $('#prix-ici').text(prixTotal.toFixed(2));
         }
+
         function randomNb(min, max) {
             return Math.floor(Math.random() * (max - min + 1)) + min;
         }
     }
 
     //Vide le panier
-    function viderPanier()
-    {
+    function viderPanier() {
         var $tableDuPanier = $('#table-panier');
         $tableDuPanier.html('');
         panier = [];
@@ -305,12 +321,18 @@ $(function() {
             $parent.append(livreObj.domFormatAffiche());
 
             //Cache l'étoile de nouveauté, si le livre n'est pas une nouveauté
-            if(livreObj.nouveaute == false)
+            if (livreObj.nouveaute == false)
                 $('#L' + livreObj.id).find('.nouveau-icon').addClass("hidden");
 
             //Ajoute écouteurs pour afficher les details du livre
-            $('#D' + livreObj.id).on("click", function(e) { e.preventDefault(); afficheDetails(this.id); });
-            $('#T' + livreObj.id).on("click", function(e) { e.preventDefault(); afficheDetails(this.id); });
+            $('#D' + livreObj.id).on("click", function(e) {
+                e.preventDefault();
+                afficheDetails(this.id);
+            });
+            $('#T' + livreObj.id).on("click", function(e) {
+                e.preventDefault();
+                afficheDetails(this.id);
+            });
 
             livres.push(livreObj);
         }
@@ -329,8 +351,7 @@ $(function() {
         $.each(livres, function(key, value) {
             if (value.id == livreId) {
                 detailsDom = livres[key].domFormatDetails();
-            }
-            else { }
+            } else {}
         });
 
         //Charge la page de details
@@ -359,7 +380,7 @@ $(function() {
             //Si l'objet livre est dans le tableau 'livres' mais pas dans le tableau 'panier', on peut l'ajouter
             $.each(livres, function(key, value) {
                 if (value.id == self.getAttribute("value") && !estLivreDansPanier(panier, this)) {
-                    if(this.qttDansPanier < 1)
+                    if (this.qttDansPanier < 1)
                         this.qttDansPanier = 1; //Mets la qtt dans panier à 1
                     panier.push(this);
 
@@ -400,7 +421,7 @@ $(function() {
                 if (value != undefined && value.id == self.getAttribute("value") && panier.indexOf(this) >= 0) {
                     $('#P' + value.id).fadeOut("slow");
                     panier.splice(panier.indexOf(this), 1);
-                    this.qttDansPanier = 0;  //Mets la qtt dans panier a zero
+                    this.qttDansPanier = 0; //Mets la qtt dans panier a zero
                 }
             });
             reglerCerclePanier()
@@ -472,18 +493,16 @@ $(function() {
         sauvegarderPanier(panier);
 
         //Change l'état du btn Payez. 'Disabled' si le panier est vide
-        if(prixTotal == 0) {
+        if (prixTotal == 0) {
             $('#btn-payez').addClass("disabled");
 
             //Si l'usager vider le panier lors qu'il est dans la page de paiement, on charge la page initial
-            if($('#gros-panier')[0] != undefined)
-            {
+            if ($('#gros-panier')[0] != undefined) {
                 loadContenuPrincipal("accueil");
                 $('.active').removeClass("active");
                 $('#accueil').addClass("active");
             }
-        }
-        else {
+        } else {
             mettreAJourPanierAchats();
             $('#btn-payez').removeClass("disabled");
         }
@@ -524,11 +543,25 @@ $(function() {
 
     //Sauvegarde les livres dans le panier
     function sauvegarderPanier(panier) {
-        localStorage.setItem("dans_panier", JSON.stringify(panier));
+        if (window.localStorage)
+            localStorage.setItem("dans_panier", JSON.stringify(panier));
     }
 
-}); //Fin du $()
+    //Print
+    var $printPanier = $("#affiche-panier");
+    //Teste si on est on mode d'impression
+    var mediaQueryList = window.matchMedia('print');
+    mediaQueryList.addListener(function(mql) {
+        if (mql.matches) { //Avant l'impression
+            $printPanier.width("800px");
+            console.log($printPanier.width());
 
+        } else { //Apres l'impression
+            fermerPanier();
+        }
+    });
+
+}); //Fin du $()
 
 //Classe Livre
 function Livre() {
@@ -659,34 +692,7 @@ Livre.prototype.domFormatPanier = function() {
 }
 
 Livre.prototype.domFormatDetails = function() {
-    var livreHTML = '<div class="col-sm-4"><img src="' + this.image + '" class="center-block img-details" alt="book" /></a></div>        <div class="col-sm-8">        <p class="titre-details">' + this.titre + '</p>        <p class="auteur-details">' + this.auteur + '</p>        <p class="description-details">' + this.description + '</p>            <div id="prix-et-panier" class="row">                    <div class="col-sm-6">                            <p class="prix-details">$' + this.prix.toFixed(2) + '</p>                    </div>                    <div class="col-sm-6">                            <div class="add-details">                                    <a value="' + this.id + '" class="ajouter" href="#"><i class="fa fa-share"></i><i class="fa fa-shopping-cart"></i></a>                            </div>                    </div>            </div></div>    ';
-    return livreHTML;
+        var livreHTML = '<div class="col-sm-4"><img src="' + this.image + '" class="center-block img-details" alt="book" /></a></div>        <div class="col-sm-8">        <p class="titre-details">' + this.titre + '</p>        <p class="auteur-details">' + this.auteur + '</p>        <p class="description-details">' + this.description + '</p>            <div id="prix-et-panier" class="row">                    <div class="col-sm-6">                            <p class="prix-details">$' + this.prix.toFixed(2) + '</p>                    </div>                    <div class="col-sm-6">                            <div class="add-details">                                    <a value="' + this.id + '" class="ajouter" href="#"><i class="fa fa-share"></i><i class="fa fa-shopping-cart"></i></a>                            </div>                    </div>            </div></div>    ';
+        return livreHTML;
 }
-
-var quotes = [{
-    "id": 1,
-    "auteur": "Desiderius Erasmus",
-    "quote": "When I have a little money, I buy books; and if I have any left, I buy food and clothes."
-}, {
-    "id": 2,
-    "auteur": "Marcus Tullius Cicero",
-    "quote": "A room without books is like a body without a soul."
-}, {
-    "id": 3,
-    "auteur": "Frank Zappa",
-    "quote": "So many books, so little time."
-}, {
-    "id": 4,
-    "auteur": "Groucho Marx",
-    "quote": "I find television very educating. Every time somebody turns on the set, I go into the other room and read a book."
-}, {
-    "id": 5,
-    "auteur": "Ernest Hemingway",
-    "quote": "There is no friend as loyal as a book."
-}];
-var afficheQuote = document.getElementById("quote");
-var afficheAuteur = document.getElementById("auteur");
-var randomQuote = Math.floor(Math.random() * 5);
-
-afficheQuote.innerHTML = '"' + quotes[randomQuote].quote + '"';
-afficheAuteur.innerHTML = '"' + quotes[randomQuote].auteur + '"';
+//Fin de la classe Livre

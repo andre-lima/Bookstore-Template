@@ -1,3 +1,8 @@
+/*
+Autheur: Andre Dantas Lima
+ift-1142
+TP3
+*/
 main, body, html, h1, h2, h3, img, div, article, p, input, select, label, form, figure {
     margin: 0;
     padding: 0;
@@ -137,7 +142,6 @@ footer {
 #qtt-panier {
     border-radius: 50%;
     width: 35px;
-    heigth: 30px;
     background-color: red;
     color: white;
     text-align: center;

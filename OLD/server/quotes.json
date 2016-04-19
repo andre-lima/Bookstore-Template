@@ -1,0 +1,25 @@
+[{
+    "id": 1,
+    "auteur": "Desiderius Erasmus",
+    "quote": "When I have a little money, I buy books; and if I have any left, I buy food and clothes."
+}, {
+    "id": 2,
+    "auteur": "Marcus Tullius Cicero",
+    "quote": "A room without books is like a body without a soul."
+}, {
+    "id": 3,
+    "auteur": "Frank Zappa",
+    "quote": "So many books, so little time."
+}, {
+    "id": 4,
+    "auteur": "Groucho Marx",
+    "quote": "I find television very educating. Every time somebody turns on the set, I go into the other room and read a book."
+}, {
+    "id": 5,
+    "auteur": "Ernest Hemingway",
+    "quote": "There is no friend as loyal as a book."
+}, {
+    "id": 6,
+    "auteur": "Jean Guéhenno",
+    "quote": "Un livre est un outil de liberté."
+}]

@@ -1,3 +1,9 @@
+/*
+Autheur: Andre Dantas Lima
+ift-1142
+TP3
+*/
+
 //Tableau et variables globales
 books = [];
 panier = [];
@@ -9,7 +15,6 @@ estPanierVide = true;
 
 
 $(function() {
-
     //Charge les quotes
     $.ajax({
         url: 'server/quotes.json',

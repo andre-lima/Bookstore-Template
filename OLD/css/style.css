@@ -23,8 +23,7 @@ html {
     margin-bottom: 0px;
     border-radius: 0;
 }
-.jumbotron {
-    margin-bottom: 0;
+    .jumbotron {    margin-bottom: 0;
     padding-bottom: 0;
 }
 #logo {
@@ -59,8 +58,14 @@ footer {
 .panel-footer {
     position: relative;
     height: 43%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 .img-affiche {
     /*width: 110px;*/
@@ -198,6 +203,9 @@ footer {
 #btn-payez {
     margin-top: 20px;
 }
+.plus-minus {
+	cursor: pointer;
+}
 .plus-minus, .livre-qtt {
     display: inline-block;
     width: 10px;
@@ -248,7 +256,7 @@ footer {
 .description-details {
     text-indent: 35px;
 }
-.titre-details {}
+
 .prix-details, .add-details {
     font-size: 22pt;
     text-align: center;
@@ -298,4 +306,25 @@ footer {
 
 #affiche-contact {
     width: 90%;
+}
+
+@media print {
+	#affiche-panier {
+		background-color: white;
+		position: absolute;
+		left: 170px;
+		overflow: visible;
+	}
+
+	#display-main, footer, #nav, #header-page{ display: none;}
+
+	.plus-minus, .supprime-du-panier, #btn-payez{
+		display: none;
+	}
+
+	.livre-qtt {
+		font-size: 14pt;
+	}
+
+	.livre-dans-panier td img { width: 170px; }
 }
